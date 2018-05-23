@@ -27,13 +27,13 @@ class Home extends Component {
         <div className="top-background" />
         <div className="header-container">
           <div className="header-left hidden-sm">
-            <a href="https://www.algolia.com/">Discover Algolia</a>
+            <a href="https://developer.bloomreach.com/">Discover BloomReach</a>
           </div>
           <p className="site-branding">
-            <a href="https://www.algolia.com/">
+            <a href="https://www.bloomreach.com/">
               <img
-                src="https://blog.algolia.com/wp-content/themes/aerial/images/algolia-logo-dark.svg"
-                alt="Algolia Blog"
+                src="https://www.bloomreach.com/webfiles/1526984875645/com-assets/img/logo.svg"
+                alt="BloomReach Developer Blog"
               />
             </a>
           </p>
@@ -61,13 +61,13 @@ class Home extends Component {
               <a href="#">Engineering</a>
             </li>
             <li className="">
-              <a href="#">Algolia</a>
+              <a href="#">BloomReach</a>
             </li>
             <li className="">
-              <a href="#">Customers</a>
+              <a href="#">Experience</a>
             </li>
             <li className="">
-              <a href="#">E-commerce</a>
+              <a href="#">Personalization</a>
             </li>
             <li className="">
               <a href="#">UX</a>
@@ -109,7 +109,7 @@ class Home extends Component {
                 </div>
 
                 <form
-                  action="https://go.pardot.com/l/139121/2016-06-09/f3kzm"
+                  action="http://go.bloomreach.com/join-the-hippo-community.html"
                   method="post"
                 >
                   <div className="flex-container newsletter-input">
