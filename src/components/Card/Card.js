@@ -1,53 +1,80 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./style.css";
 class Card extends Component {
+  constructor(props) {
+    super(props);
+    console.log(this.props.post);
+    this.state = {
+      url: this.props.post.url,
+      name: this.props.post.name,
+      img: this.props.post.img,
+      date: this.props.post.date,
+      title: this.props.post.title,
+      text: this.props.post.text,
+      src: this.props.post.src
+    };
+  }
   render() {
     return (
       <div className="post">
         <div className="post-img">
-          <a href="https://blog.algolia.com/supporting-open-source-projects/">
+          <Link
+            to={{
+              pathname: this.state.url,
+              state: {
+                title: this.state.title,
+                img: this.state.img,
+                text: this.state.text,
+                name: this.state.name
+              }
+            }}
+          >
             <img
               width="360"
               height="200"
-              src="https://blog.algolia.com/wp-content/uploads/2018/04/Blogpost-KB-Open-Source-360x200.jpg"
+              src={this.state.img}
               className="attachment-aerial_thumbnail size-aerial_thumbnail wp-post-image"
               alt="Supporting the Open Source Software that makes us Great"
               scale="0"
             />
-          </a>
+          </Link>
         </div>
         <div className="post-content">
-          <div className="post-date">May 8th 2018</div>
+          <div className="post-date">{this.state.date}</div>
           <h2 className="entry-title">
-            <a
-              href="https://blog.algolia.com/supporting-open-source-projects/"
-              rel="bookmark"
+            <Link
+              to={{
+                pathname: this.state.url,
+                state: {
+                  title: this.state.title,
+                  src: this.state.src,
+                  text: this.state.text
+                }
+              }}
             >
-              Supporting the Open Source Software that makes us Great
-            </a>
+              {this.state.title}
+            </Link>
           </h2>
           <div className="post-excerpt">
-            <p>
-              At Algolia many of us are working with, contributing to, or
-              benefitting from open […]
-            </p>
+            <p>{this.state.text}</p>
           </div>
           <div className="entry-meta clear">
             <div className="author-gravatar">
               <img
                 alt=""
-                src="https://secure.gravatar.com/avatar/d6231e4205a426a0d82eb7df97e52222?s=80&amp;d=mm&amp;r=g"
-                srcSet="https://secure.gravatar.com/avatar/d6231e4205a426a0d82eb7df97e52222?s=80&amp;d=mm&amp;r=g 2x"
+                src={this.state.src}
+                srcSet={this.state.src}
                 className="avatar avatar-40 photo"
                 height="40"
                 width="40"
                 originals="40"
-                src-orig="https://secure.gravatar.com/avatar/d6231e4205a426a0d82eb7df97e52222?s=40&amp;d=mm&amp;r=g"
+                src-orig={this.state.src}
                 scale="2"
               />
             </div>
             <div className="entry-author-content">
-              <div className="author-name">Martyn Davies</div>
+              <div className="author-name">{this.state.name}</div>
               <div className="post-meta-info"> 6 min read in Algolia</div>
             </div>
           </div>

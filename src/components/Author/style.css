@@ -1,0 +1,33 @@
+.entry-meta .entry-meta-title {
+  color: #8994c6;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1.7px;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+.entry-meta .author-avatar {
+  float: left;
+  margin-right: 20px;
+  width: 80px !important;
+  height: 80px !important;
+}
+.entry-meta .author-avatar img {
+  border-radius: 40px;
+}
+.entry-meta .author-name {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 25px;
+}
+.entry-meta .author-position {
+  color: #8994c6;
+  font-size: 16px;
+  letter-spacing: -0.3px;
+}
+.entry-meta .entry-social-links a {
+  color: #8994c6;
+  font-size: 20px;
+  display: inline-block;
+  margin-right: 10px;
+}

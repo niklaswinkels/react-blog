@@ -1,0 +1,171 @@
+img {
+  height: auto;
+  max-width: 100%;
+}
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+.entry-thumbnail {
+  margin-bottom: 65px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #f7f7ff;
+  position: relative;
+}
+.entry-thumbnail img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.entry-header {
+  bottom: 0;
+  width: 100%;
+  height: 65%;
+  background-image: linear-gradient(to top, #6d5e9a, rgba(195, 175, 254, 0));
+  position: absolute;
+  border-radius: 4px;
+  overflow: hidden;
+}
+@media (max-width: 992px) {
+  .entry-header {
+    height: 75%;
+  }
+}
+@media (max-width: 480px) {
+  .entry-header {
+    height: 100%;
+  }
+}
+
+.entry-header-content {
+  position: absolute;
+  padding: 40px;
+  bottom: 0;
+  width: 100%;
+}
+@media (max-width: 992px) {
+  .entry-header .entry-header-content {
+    padding: 0 24px 16px;
+  }
+}
+.text-center {
+  text-align: center;
+}
+@media (max-width: 992px) {
+  .entry-header .entry-title {
+    font-size: 20px;
+  }
+}
+.entry-header h1 {
+  font-size: 48px;
+  font-weight: 500;
+  letter-spacing: -2px;
+  margin-top: 0;
+  color: #fff;
+  text-shadow: 0 2px 0 rgba(62, 57, 107, 0.1);
+}
+
+.head-post-meta {
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 36px;
+  text-shadow: 0 2px 0 rgba(62, 57, 107, 0.1);
+}
+.entry-content {
+  max-width: 720px;
+  margin: 0 auto 40px;
+  position: relative;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #8994c6;
+}
+.entry-content a {
+  color: #00aeff !important;
+  text-decoration: none;
+  background-color: transparent;
+}
+#crestashareiconincontent {
+  position: absolute;
+  left: -120px;
+}
+#crestashareiconincontent {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1;
+  text-rendering: optimizeLegibility;
+}
+@media (max-width: 992px) {
+  #crestashareiconincontent {
+    position: relative;
+    left: initial;
+  }
+}
+#crestashareiconincontent .sbutton {
+  float: none;
+  margin: 0 8px 8px 0;
+}
+@media (max-width: 992px) {
+  #crestashareiconincontent .sbutton {
+    float: left;
+  }
+}
+.cresta-share-icon .sbutton {
+  position: relative;
+  margin: 8px 0;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  letter-spacing: 0.5px;
+  font-family: "Noto Sans", sans-serif;
+  line-height: 1;
+}
+.cresta-share-icon i.c-icon-cresta-facebook,
+.cresta-share-icon i.c-icon-cresta-twitter,
+.cresta-share-icon i.c-icon-cresta-gplus,
+.cresta-share-icon i.c-icon-cresta-linkedin,
+.cresta-share-icon i.c-icon-cresta-pinterest,
+.cresta-share-icon i.c-icon-cresta-print {
+  color: #8994c6;
+  width: 40px !important;
+  height: 40px !important;
+  text-align: center !important;
+  padding: 9px 0;
+  border: 1px solid #8994c6;
+  position: relative;
+  overflow: hidden;
+  -webkit-box-sizing: border-box !important;
+  -moz-box-sizing: border-box !important;
+  box-sizing: border-box !important;
+}
+
+.bottom-share #crestashareiconincontent {
+  position: relative;
+  left: initial;
+}
+.bottom-share #crestashareiconincontent .sbutton {
+  float: left;
+}
+#author {
+  max-width: 720px;
+  margin: 0 auto 60px;
+  position: relative;
+}
+#author .entry-social-links a {
+  color: #8994c6 !important;
+  font-size: 20px;
+  display: inline-block;
+  margin-right: 10px;
+}

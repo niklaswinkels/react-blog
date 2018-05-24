@@ -6,9 +6,25 @@
   margin: initial;
   margin-bottom: 40px;
   padding-bottom: 64px;
+  max-height: 560px;
   position: relative;
   transition: transform 0.3s, box-shadow 0.3s;
   will-change: auto;
+}
+@media (min-width: 1200px) {
+  .post {
+    max-height: 540px;
+  }
+}
+@media (max-width: 992px) {
+  .post {
+    max-height: 540px;
+  }
+}
+@media (max-width: 768px) {
+  .post {
+    max-height: 650px;
+  }
 }
 .post:hover {
   box-shadow: 0 10px 22px 0 rgba(112, 128, 175, 0.2);
@@ -60,7 +76,6 @@ img {
 .entry-meta {
   position: absolute;
   max-width: 720px;
-  bottom: 40px;
   margin: 0;
 }
 .author-gravatar {
@@ -79,10 +94,10 @@ img {
   overflow: hidden;
 }
 .entry-author-content .author-name {
-  font-weight: 500;
-  font-size: 13px;
-  white-space: nowrap;
-  line-height: 25px;
+  font-weight: 500 !important;
+  font-size: 13px !important;
+  white-space: nowrap !important;
+  line-height: 25px !important;
 }
 .entry-author-content .post-meta-info {
   line-height: 1.85;

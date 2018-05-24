@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 import Home from "./screen/home";
-import Detail from "./screen/detail";
-import { Router, Route, IndexRoute, browserHistory } from "react-router";
+import Detail from "./screen/detail/detail";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 class App extends Component {
   render() {
     return (
-      <Router history={browserHistory}>
-        <Route path="/">
-          <IndexRoute component={Home} />
-          <Route path="detail" component={Detail} />
-        </Route>
+      <Router>
+        <Switch>
+          <Route exact={true} path="/" component={Home} />
+          <Route path="/:pathId" component={Detail} />
+        </Switch>
       </Router>
     );
   }
