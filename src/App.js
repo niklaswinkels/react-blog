@@ -8,8 +8,10 @@ class App extends Component {
     return (
       <Router>
         <Switch>
-          <Route exact={true} path="/" component={Home} />
-          <Route path="/:pathId" component={Detail} />
+          {/*<Route exact={true} path="/" component={Home} />*/}
+          {/*<Route path="/:pathId" component={Detail} />*/}
+          <Route path="/site/developer/blog" component={Home} />
+          <Route path="/site/developer/:blogName" component={Detail} />
         </Switch>
       </Router>
     );
