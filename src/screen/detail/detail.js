@@ -34,7 +34,7 @@ class Detail extends Component {
         <div className="top-background" />
         <div className="header-container">
           <div className="header-left hidden-sm">
-            <a href="https://www.algolia.com/">Discover BloomReach</a>
+            <a href="https://developers.bloomreach.com/">Discover BloomReach</a>
           </div>
           <p className="site-branding">
             <a href="https://www.bloomreach.com/">

@@ -34,7 +34,7 @@ img {
   bottom: 0;
   width: 100%;
   height: 65%;
-  background-image: linear-gradient(to top, #6d5e9a, rgba(195, 175, 254, 0));
+  background-image: linear-gradient(to top, #5e2c54, rgba(195, 175, 254, 0));
   position: absolute;
   border-radius: 4px;
   overflow: hidden;
