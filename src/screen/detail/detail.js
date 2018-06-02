@@ -26,6 +26,26 @@ class Detail extends Component {
   componentDidMount() {
     const { handle } = this.props.match.params;
     const { fromState } = this.props.location.state;
+    var resourceDetailBaseUrl = "http://localhost:8080/site/developer/resourceapi/blog"
+    var that = this;
+    console.log(resourceDetailBaseUrl + this.props.location.pathname);
+    fetch(resourceDetailBaseUrl + this.props.location.pathname)
+      .then(function (response) {
+        if (response.status >= 400) {
+          throw new Error("Bad response from server");
+        }
+        return response.json();
+      })
+      .then(function (data) {
+        console.log(data);
+        data.page.components.forEach(component => {
+          if (component.componentClass === 'org.onehippo.cms7.essentials.components.EssentialsContentComponent'){
+            console.log(component)
+            that.setState({blog: data.content[component.models.document.$ref.split("/")[2]]})  
+            console.log(that.state.blog);
+          }
+        });
+      });
   }
   render() {
     return (
@@ -61,7 +81,7 @@ class Detail extends Component {
             <header className="entry-header">
               <div className="entry-header-content">
                 <h1 className="entry-title text-center">
-                  {this.props.location.state.title}
+                  {this.state.blog && this.state.blog.title}
                 </h1>
                 <div className="head-post-meta">
                   {this.props.location.state.name}
@@ -103,7 +123,7 @@ class Detail extends Component {
               </div>
             </div>
             <div style={{ clear: "both" }} />
-            <Content />
+            <Content content={this.state.blog ? this.state.blog.body.value : ''} />
             <div className="bottom-share">
               <div
                 id="crestashareiconincontent"

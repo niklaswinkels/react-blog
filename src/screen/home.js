@@ -17,8 +17,8 @@ class Home extends Component {
         return response.json();
       })
       .then(function (data) {
-        console.log(data);
         var hstBlogs = [];
+        console.log(data);
         data.page.components.forEach(component => {
           //identify the list component that has blogs
           if (component.componentClass === 'org.hippoecm.hst.pagecomposer.builtin.components.StandardContainerComponent'
@@ -43,9 +43,11 @@ class Home extends Component {
             date: date.toDateString(),
             title: hstBlog.title,
             introduction: hstBlog.introduction,
-            author: authorObj
+            author: authorObj,
+            fullyQualifiedUrl: hstBlog.fullyQualifiedUrl
           });
         })
+        console.log(blogs);
         that.setState({ blogs: blogs });
       });
   }
@@ -79,7 +81,7 @@ class Home extends Component {
               text: blog.introduction,
               src: blog.author.image ? "http://localhost:8080" + blog.author.image.original._links.site.href
                : "https://secure.gravatar.com/avatar/d6231e4205a426a0d82eb7df97e52222?s=80&amp;d=mm&amp;r=g",
-              url: "supporting-open-source-projects"
+              url: blog.fullyQualifiedUrl.split("http://localhost:8080/site/developer/resourceapi/blog/")[1]
             }}
           />
         </Col>
