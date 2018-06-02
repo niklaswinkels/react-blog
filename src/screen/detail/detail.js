@@ -51,13 +51,13 @@ class Detail extends Component {
         <div className="top-background" />
         <div className="header-container">
           <div className="header-left hidden-sm">
-            <a href="https://www.algolia.com/">Discover Algolia</a>
+            <a href="https://www.algolia.com/">Discover BloomReach</a>
           </div>
           <p className="site-branding">
-            <a href="https://www.algolia.com/">
+            <a href="https://www.bloomreach.com/">
               <img
-                src="https://blog.algolia.com/wp-content/themes/aerial/images/algolia-logo-dark.svg"
-                alt="Algolia Blog"
+                src="https://www.bloomreach.com/webfiles/1526984875645/com-assets/img/logo.svg"
+                alt="BloomReach Developer Blog"
               />
             </a>
           </p>
@@ -70,10 +70,10 @@ class Detail extends Component {
             <img
               width="1160"
               height="645"
-              src="https://blog.algolia.com/wp-content/uploads/2018/04/04-2018_SAnalytics-API-at-scale-01.png"
+              src="https://www.bloomreach.com/binaries/original/content/gallery/blog/autosuggest.png"
               className="attachment-1160x650 size-1160x650 wp-post-image"
               alt="Building Analytics APIs at Scale"
-              srcSet="https://blog.algolia.com/wp-content/uploads/2018/04/04-2018_SAnalytics-API-at-scale-01.png 3000w, https://blog.algolia.com/wp-content/uploads/2018/04/04-2018_SAnalytics-API-at-scale-01-320x178.png 320w, https://blog.algolia.com/wp-content/uploads/2018/04/04-2018_SAnalytics-API-at-scale-01-768x427.png 768w, https://blog.algolia.com/wp-content/uploads/2018/04/04-2018_SAnalytics-API-at-scale-01-720x400.png 720w, https://blog.algolia.com/wp-content/uploads/2018/04/04-2018_SAnalytics-API-at-scale-01-360x200.png 360w"
+              srcSet="https://www.bloomreach.com/binaries/original/content/gallery/blog/autosuggest.png 3000w, https://blog.algolia.com/wp-content/uploads/2018/04/04-2018_SAnalytics-API-at-scale-01-320x178.png 320w, https://blog.algolia.com/wp-content/uploads/2018/04/04-2018_SAnalytics-API-at-scale-01-768x427.png 768w, https://blog.algolia.com/wp-content/uploads/2018/04/04-2018_SAnalytics-API-at-scale-01-720x400.png 720w, https://blog.algolia.com/wp-content/uploads/2018/04/04-2018_SAnalytics-API-at-scale-01-360x200.png 360w"
               sizes="(max-width: 1160px) 100vw, 1160px"
             />
             <header className="entry-header">
@@ -183,7 +183,7 @@ class Detail extends Component {
                 </div>
 
                 <form
-                  action="https://go.pardot.com/l/139121/2016-06-09/f3kzm"
+                  action="http://go.bloomreach.com/join-the-hippo-community.html"
                   method="post"
                 >
                   <div className="flex-container newsletter-input">
