@@ -19,7 +19,6 @@ class Detail extends Component {
     this.toggle = this.toggle.bind(this);
   }
   toggle() {
-    console.log("clicke");
     this.setState({
       modal: !this.state.modal
     });

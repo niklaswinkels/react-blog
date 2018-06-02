@@ -6,6 +6,49 @@ import LastCard from "../components/LastCard/LastCard";
 
 import "../App.css";
 class Home extends Component {
+  componentDidMount() {
+    var that = this;
+    var url = 'http://localhost:8080/site/developer/resourceapi/blog'
+    fetch(url)
+      .then(function (response) {
+        if (response.status >= 400) {
+          throw new Error("Bad response from server");
+        }
+        return response.json();
+      })
+      .then(function (data) {
+        console.log(data);
+        var hstBlogs = [];
+        data.page.components.forEach(component => {
+          //identify the list component that has blogs
+          if (component.componentClass === 'org.hippoecm.hst.pagecomposer.builtin.components.StandardContainerComponent'
+            && component.label === 'Landing page container') {
+              component.components.forEach(containerComponent => {
+                if(containerComponent.componentClass === 'org.onehippo.cms7.essentials.components.EssentialsListComponent'
+              && containerComponent.label === 'Generic List')
+                containerComponent.models.pageable.items.forEach(item => {
+                  hstBlogs.push(data.content[item["$ref"].split("/")[2]]);
+                })
+              })
+          }
+        });
+        var blogs = [];
+        hstBlogs.forEach(hstBlog => {
+          var date = new Date(hstBlog.publicationDate)
+          if (hstBlog.authors) {
+            var authorJsonLinkIndex = hstBlog.authors[0]["$ref"].split("/")[2]
+          }
+          var authorObj = data.content[authorJsonLinkIndex]
+          blogs.push({
+            date: date.toDateString(),
+            title: hstBlog.title,
+            introduction: hstBlog.introduction,
+            author: authorObj
+          });
+        })
+        that.setState({ blogs: blogs });
+      });
+  }
   constructor(props) {
     super(props);
 
@@ -20,6 +63,28 @@ class Home extends Component {
     this.setState({
       modal: !this.state.modal
     });
+  }
+
+  renderBlogs() {
+    if (this.state.blogs) {
+      return this.state.blogs.map((blog, index) => {
+        return <Col md="6" lg="4" key={index}>
+          <Card
+            post={{
+              name: blog.author.displayName,
+              img:
+                "https://blog.algolia.com/wp-content/uploads/2018/04/Blogpost-KB-Open-Source.jpg",
+              date: blog.date,
+              title: blog.title,
+              text: blog.introduction,
+              src: blog.author.image ? "http://localhost:8080" + blog.author.image.original._links.site.href
+               : "https://secure.gravatar.com/avatar/d6231e4205a426a0d82eb7df97e52222?s=80&amp;d=mm&amp;r=g",
+              url: "supporting-open-source-projects"
+            }}
+          />
+        </Col>
+      })
+    }
   }
 
   render() {
@@ -76,58 +141,7 @@ class Home extends Component {
           </ul>
           <Container>
             <Row>
-              <Col md="6" lg="4">
-                <Card
-                  post={{
-                    name: "Martyn Davies",
-                    img:
-                      "https://blog.algolia.com/wp-content/uploads/2018/04/Blogpost-KB-Open-Source.jpg",
-                    date: "May 8th 2018",
-                    title:
-                      "Supporting the Open Source Software that makes us Great",
-                    text:
-                      "At Algolia,many of us are working with,contributing to,or benefitting from open[..]",
-                    src:
-                      "https://secure.gravatar.com/avatar/d6231e4205a426a0d82eb7df97e52222?s=80&amp;d=mm&amp;r=g",
-                    url: "supporting-open-source-projects"
-                  }}
-                />
-              </Col>
-              <Col md="6" lg="4">
-                <Card
-                  post={{
-                    name: "Alexandra Prokhorova",
-                    img:
-                      "https://blog.algolia.com/wp-content/uploads/2018/04/04-2018_Hacking-User-Research.png",
-                    date: "April 18th 2018",
-                    title: "How to Hack User Research",
-                    text:
-                      "In this article, we’re sharing how we’re getting creative with conducting user research to […]",
-                    src:
-                      "https://secure.gravatar.com/avatar/b7b1f6907cbd482084cdddb82f2c0762?s=80&d=mm&r=g",
-                    url: "how-to-hack-user-research"
-                  }}
-                />
-              </Col>
-              <Col md="6" lg="4">
-                <Card
-                  post={{
-                    name: "Sylvain Friquet",
-                    img:
-                      "https://blog.algolia.com/wp-content/uploads/2018/04/04-2018_SAnalytics-API-at-scale-01.png",
-                    date: "Apr 6th 2018",
-                    title: "Building Real Time Analytics APIs at Scale",
-                    text:
-                      "We recently redesigned our analytics API from the ground up, in order to provide […]",
-                    src:
-                      "https://secure.gravatar.com/avatar/fedb84f11c7a57ad54880b0da6bbca0d?s=80&d=mm&r=g",
-                    url: "building-real-time-analytics-apis"
-                  }}
-                />
-              </Col>
-              <Col md="6" lg="4">
-                <LastCard />
-              </Col>
+              {this.renderBlogs()}
             </Row>
           </Container>
         </div>

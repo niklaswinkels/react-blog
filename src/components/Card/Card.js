@@ -4,7 +4,6 @@ import "./style.css";
 class Card extends Component {
   constructor(props) {
     super(props);
-    console.log(this.props.post);
     this.state = {
       url: this.props.post.url,
       name: this.props.post.name,
