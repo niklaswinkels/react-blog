@@ -2,6 +2,11 @@ import React, { Component } from "react";
 import "./style.css";
 
 class Author extends Component {
+
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <div>
@@ -9,8 +14,7 @@ class Author extends Component {
         <div className="author-avatar">
           <img
             alt=""
-            src="https://secure.gravatar.com/avatar/25760a5d4e793e491f26da5db64bb738?s=160&amp;d=mm&amp;r=g"
-            srcSet="https://secure.gravatar.com/avatar/25760a5d4e793e491f26da5db64bb738?s=160&amp;d=mm&amp;r=g 2x"
+            src={this.props.author && ("http://localhost:8080" + this.props.author.image.original._links.site.href)}
             className="avatar avatar-80 photo"
             height="80"
             width="80"
@@ -20,8 +24,8 @@ class Author extends Component {
           />
         </div>
         <div className="entry-author-content">
-          <div className="author-name">Julien Lemoine</div>
-          <div className="author-position">Co-founder &amp; CTO at Algolia</div>
+          <div className="author-name">{this.props.author && this.props.author.displayName}</div>
+          <div className="author-position">{this.props.author && this.props.author.role}</div>
           <div className="entry-social-links">
             <a
               href="https://twitter.com/jlemoine_algo"

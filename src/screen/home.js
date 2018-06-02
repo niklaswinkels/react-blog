@@ -18,7 +18,6 @@ class Home extends Component {
       })
       .then(function (data) {
         var hstBlogs = [];
-        console.log(data);
         data.page.components.forEach(component => {
           //identify the list component that has blogs
           if (component.componentClass === 'org.hippoecm.hst.pagecomposer.builtin.components.StandardContainerComponent'
@@ -47,7 +46,6 @@ class Home extends Component {
             fullyQualifiedUrl: hstBlog.fullyQualifiedUrl
           });
         })
-        console.log(blogs);
         that.setState({ blogs: blogs });
       });
   }
