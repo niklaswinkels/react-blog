@@ -20,37 +20,6 @@ class Home extends Component {
       })
       .then(function (data) {
         that.setState({data: data});
-        var hstBlogs = [];
-        data.page.components.forEach(component => {
-          //identify the list component that has blogs
-          if (component.componentClass === 'org.hippoecm.hst.pagecomposer.builtin.components.StandardContainerComponent'
-            && component.label === 'Landing page container') {
-            component.components.forEach(containerComponent => {
-              if (containerComponent.componentClass === 'org.onehippo.cms7.essentials.components.EssentialsListComponent'
-                && containerComponent.label === 'Generic List') {
-                containerComponent.models.pageable.items.forEach(item => {
-                  hstBlogs.push(data.content[item["$ref"].split("/")[2]]);
-                })
-              }
-            })
-          }
-        });
-        var blogs = [];
-        hstBlogs.forEach(hstBlog => {
-          var date = new Date(hstBlog.publicationDate)
-          if (hstBlog.authors) {
-            var authorJsonLinkIndex = hstBlog.authors[0]["$ref"].split("/")[2]
-          }
-          var authorObj = data.content[authorJsonLinkIndex]
-          blogs.push({
-            date: date.toDateString(),
-            title: hstBlog.title,
-            introduction: hstBlog.introduction,
-            author: authorObj,
-            fullyQualifiedUrl: hstBlog.fullyQualifiedUrl
-          });
-        });
-        that.setState({blogs: blogs});
       });
   }
 
@@ -69,28 +38,6 @@ class Home extends Component {
     this.setState({
       modal: !this.state.modal
     });
-  }
-
-  renderBlogs () {
-    if (this.state.blogs) {
-      return this.state.blogs.map((blog, index) => {
-        return <Col md="6" lg="4" key={index}>
-          <Card
-            post={{
-              name: blog.author.displayName,
-              img:
-                "https://blog.algolia.com/wp-content/uploads/2018/04/Blogpost-KB-Open-Source.jpg",
-              date: blog.date,
-              title: blog.title,
-              text: blog.introduction,
-              src: blog.author.image ? "http://localhost:8080" + blog.author.image.original._links.site.href
-                : "https://secure.gravatar.com/avatar/d6231e4205a426a0d82eb7df97e52222?s=80&amp;d=mm&amp;r=g",
-              url: blog.fullyQualifiedUrl.split("http://localhost:8080/site/developer/resourceapi/blog/")[1]
-            }}
-          />
-        </Col>
-      })
-    }
   }
 
   render () {
