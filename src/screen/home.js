@@ -20,6 +20,7 @@ class Home extends Component {
       })
       .then(function (data) {
         that.setState({data: data});
+        that.forceUpdate();
       });
   }
 
@@ -28,7 +29,8 @@ class Home extends Component {
 
     this.state = {
       modal: false,
-      width: props.width
+      width: props.width,
+      data: {}
     };
 
     this.toggle = this.toggle.bind(this);
@@ -93,7 +95,6 @@ class Home extends Component {
             </li>
           </ul>
           <Container>
-            /*Layout Manager decides what should be rendered based on page model api*/
             <LayoutManager data={this.state.data ? this.state.data : ''}/>
           </Container>
         </div>

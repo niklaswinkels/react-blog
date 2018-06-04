@@ -10,7 +10,7 @@ class LayoutManager extends Component {
   componentWillReceiveProps () {
     var layoutElements = []; //array that contains the child react components
     var that = this;
-    if (this.props.data) {
+    if (this.props.data && this.props.data.page) {
       this.props.data.page.components.forEach(component => {
         //identify the main landing page component that has drag&drop components
         if (component.componentClass === 'org.hippoecm.hst.pagecomposer.builtin.components.StandardContainerComponent'
@@ -95,35 +95,33 @@ class LayoutManager extends Component {
 
   renderBlogs (blogs) {
     if (blogs) {
-      return (<Row>
-        {blogs.map((blog, index) => {
-          return (
-            <Col md="6" lg="4" key={index}>
-              <Card
-                post={{
-                  name: blog.author.displayName,
-                  img:
-                    "https://blog.algolia.com/wp-content/uploads/2018/04/Blogpost-KB-Open-Source.jpg",
-                  date: blog.date,
-                  title: blog.title,
-                  text: blog.introduction,
-                  src: blog.author.image ? "http://localhost:8080" + blog.author.image.original._links.site.href
-                    : "https://secure.gravatar.com/avatar/d6231e4205a426a0d82eb7df97e52222?s=80&amp;d=mm&amp;r=g",
-                  url: blog.fullyQualifiedUrl.split("http://localhost:8080/site/developer/resourceapi/blog/")[1]
-                }}
-              />
-            </Col>
-          )
-        })}
-      </Row>)
+      return blogs.map((blog, index) => {
+        return (
+          <Col md="6" lg="4" key={index}>
+            <Card
+              post={{
+                name: blog.author.displayName,
+                img:
+                  "https://blog.algolia.com/wp-content/uploads/2018/04/Blogpost-KB-Open-Source.jpg",
+                date: blog.date,
+                title: blog.title,
+                text: blog.introduction,
+                src: blog.author.image ? "http://localhost:8080" + blog.author.image.original._links.site.href
+                  : "https://secure.gravatar.com/avatar/d6231e4205a426a0d82eb7df97e52222?s=80&amp;d=mm&amp;r=g",
+                url: blog.fullyQualifiedUrl.split("http://localhost:8080/site/developer/resourceapi/blog/")[1]
+              }}
+            />
+          </Col>
+        )
+      })
     }
   }
 
   render () {
     return (
       <Container>
-        {this.state && this.state.layoutElements && this.state.layoutElements.map(layoutElement => {
-          return layoutElement;
+        {this.state && this.state.layoutElements && this.state.layoutElements.map((layoutElement, index) => {
+          return (<Row key={index}>{layoutElement}</Row>);
         })}
       </Container>
     )
