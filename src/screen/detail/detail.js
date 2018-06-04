@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import ClickOutside from "react-click-outside";
-import { Col, Row, Container } from "reactstrap";
+import {Col, Row, Container} from "reactstrap";
 import Card from "../../components/Card/Card";
 import LastCard from "../../components/LastCard/LastCard";
 import Author from "../../components/Author/Author";
@@ -8,8 +8,9 @@ import Content from "../../components/Content/Content";
 import Newsletter from "../../components/Newsletter/Newsletter";
 import "../../App.css";
 import "./style.css";
+
 class Detail extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
 
     this.state = {
@@ -18,13 +19,15 @@ class Detail extends Component {
     };
     this.toggle = this.toggle.bind(this);
   }
-  toggle() {
+
+  toggle () {
     this.setState({
       modal: !this.state.modal
     });
   }
-  componentDidMount() {
-    var resourceDetailBaseUrl = "http://localhost:8080/site/developer/resourceapi/blog"
+
+  componentDidMount () {
+    var resourceDetailBaseUrl = "http://localhost:8080/site/developer/resourceapi/blog";
     var that = this;
     fetch(resourceDetailBaseUrl + this.props.location.pathname)
       .then(function (response) {
@@ -35,8 +38,8 @@ class Detail extends Component {
       })
       .then(function (data) {
         data.page.components.forEach(component => {
-          if (component.componentClass === 'org.onehippo.cms7.essentials.components.EssentialsContentComponent'){
-            var blog = data.content[component.models.document.$ref.split("/")[2]]
+          if (component.componentClass === 'org.onehippo.cms7.essentials.components.EssentialsContentComponent') {
+            var blog = data.content[component.models.document.$ref.split("/")[2]];
             //find author of blog
             var authorRef = blog.authors[0].$ref.split("/")[2];
             blog.author = data.content[authorRef];
@@ -45,10 +48,11 @@ class Detail extends Component {
         });
       });
   }
-  render() {
+
+  render () {
     return (
       <div className="App">
-        <div className="top-background" />
+        <div className="top-background"/>
         <div className="header-container">
           <div className="header-left hidden-sm">
             <a href="https://www.algolia.com/">Discover BloomReach</a>
@@ -98,7 +102,7 @@ class Detail extends Component {
                   href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fblog.algolia.com%2Fandroid-ndk-how-to-reduce-libs-size%2F&amp;t=Android+NDK%3A+How+to+Reduce+Binaries+Size+%E2%80%93+The+Algolia+Blog"
                   title="Share to Facebook"
                 >
-                  <i className="c-icon-cresta-facebook fa fa-facebook-f" />
+                  <i className="c-icon-cresta-facebook fa fa-facebook-f"/>
                 </a>
               </div>
               <div className="sbutton" id="twitter-cresta-c">
@@ -107,7 +111,7 @@ class Detail extends Component {
                   href="https://twitter.com/share?text=Android+NDK%3A+How+to+Reduce+Binaries+Size+%E2%80%93+The+Algolia+Blog&amp;url=https%3A%2F%2Fblog.algolia.com%2Fandroid-ndk-how-to-reduce-libs-size%2F&amp;via=algolia"
                   title="Share to Twitter"
                 >
-                  <i className="c-icon-cresta-twitter fa fa-twitter" />
+                  <i className="c-icon-cresta-twitter fa fa-twitter"/>
                 </a>
               </div>
               <div className="sbutton" id="linkedin-cresta-c">
@@ -116,12 +120,12 @@ class Detail extends Component {
                   href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fblog.algolia.com%2Fandroid-ndk-how-to-reduce-libs-size%2F&amp;title=Android+NDK%3A+How+to+Reduce+Binaries+Size+%E2%80%93+The+Algolia+Blog&amp;source=https://blog.algolia.com/"
                   title="Share to Linkedin"
                 >
-                  <i className="c-icon-cresta-linkedin fa fa-linkedin" />
+                  <i className="c-icon-cresta-linkedin fa fa-linkedin"/>
                 </a>
               </div>
             </div>
-            <div style={{ clear: "both" }} />
-            <Content content={this.state.blog ? this.state.blog.body.value : ''} />
+            <div style={{clear: "both"}}/>
+            <Content content={this.state.blog ? this.state.blog.body.value : ''}/>
             <div className="bottom-share">
               <div
                 id="crestashareiconincontent"
@@ -133,7 +137,7 @@ class Detail extends Component {
                     href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fblog.algolia.com%2Fandroid-ndk-how-to-reduce-libs-size%2F&amp;t=Android+NDK%3A+How+to+Reduce+Binaries+Size+%E2%80%93+The+Algolia+Blog"
                     title="Share to Facebook"
                   >
-                    <i className="c-icon-cresta-facebook fa fa-facebook-f" />
+                    <i className="c-icon-cresta-facebook fa fa-facebook-f"/>
                   </a>
                 </div>
                 <div className="sbutton" id="twitter-cresta-c">
@@ -142,7 +146,7 @@ class Detail extends Component {
                     href="https://twitter.com/share?text=Android+NDK%3A+How+to+Reduce+Binaries+Size+%E2%80%93+The+Algolia+Blog&amp;url=https%3A%2F%2Fblog.algolia.com%2Fandroid-ndk-how-to-reduce-libs-size%2F&amp;via=algolia"
                     title="Share to Twitter"
                   >
-                    <i className="c-icon-cresta-twitter fa fa-twitter" />
+                    <i className="c-icon-cresta-twitter fa fa-twitter"/>
                   </a>
                 </div>
                 <div className="sbutton" id="linkedin-cresta-c">
@@ -151,22 +155,22 @@ class Detail extends Component {
                     href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fblog.algolia.com%2Fandroid-ndk-how-to-reduce-libs-size%2F&amp;title=Android+NDK%3A+How+to+Reduce+Binaries+Size+%E2%80%93+The+Algolia+Blog&amp;source=https://blog.algolia.com/"
                     title="Share to Linkedin"
                   >
-                    <i className="c-icon-cresta-linkedin fa fa-linkedin" />
+                    <i className="c-icon-cresta-linkedin fa fa-linkedin"/>
                   </a>
                 </div>
-                <div style={{ clear: "both" }} />
+                <div style={{clear: "both"}}/>
               </div>
-              <div style={{ clear: "both" }} />
+              <div style={{clear: "both"}}/>
             </div>
           </div>
           <div id="author" className="entry-meta clear">
-            <Author author={ (this.state.blog && this.state.blog.author) ? this.state.blog.author : ''} />
+            <Author author={(this.state.blog && this.state.blog.author) ? this.state.blog.author : ''}/>
           </div>
-          <Newsletter />
+          <Newsletter/>
         </div>
         {this.state.modal === true && (
           <div>
-            <div className="newsletter-overlay" />
+            <div className="newsletter-overlay"/>
             <ClickOutside onClickOutside={this.toggle} className="click-inside">
               <div className="newsletter-form">
                 <button
@@ -174,7 +178,7 @@ class Detail extends Component {
                   className="close-popup-cross"
                   onClick={this.toggle}
                 >
-                  <i className="icon icon-close" />
+                  <i className="icon icon-close"/>
                 </button>
                 <div className="newsletter-form-title">Subscribe</div>
                 <div className="newsletter-msg">
@@ -207,4 +211,5 @@ class Detail extends Component {
     );
   }
 }
+
 export default Detail;

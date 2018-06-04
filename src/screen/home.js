@@ -1,12 +1,14 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import ClickOutside from "react-click-outside";
-import { Col, Row, Container } from "reactstrap";
+import {Col, Row, Container} from "reactstrap";
 import Card from "../components/Card/Card";
 import LastCard from "../components/LastCard/LastCard";
+import LayoutManager from "../components/LayoutManager/LayoutManager";
 
 import "../App.css";
+
 class Home extends Component {
-  componentDidMount() {
+  componentDidMount () {
     var that = this;
     var url = 'http://localhost:8080/site/developer/resourceapi/blog'
     fetch(url)
@@ -17,18 +19,20 @@ class Home extends Component {
         return response.json();
       })
       .then(function (data) {
+        that.setState({data: data});
         var hstBlogs = [];
         data.page.components.forEach(component => {
           //identify the list component that has blogs
           if (component.componentClass === 'org.hippoecm.hst.pagecomposer.builtin.components.StandardContainerComponent'
             && component.label === 'Landing page container') {
-              component.components.forEach(containerComponent => {
-                if(containerComponent.componentClass === 'org.onehippo.cms7.essentials.components.EssentialsListComponent'
-              && containerComponent.label === 'Generic List')
+            component.components.forEach(containerComponent => {
+              if (containerComponent.componentClass === 'org.onehippo.cms7.essentials.components.EssentialsListComponent'
+                && containerComponent.label === 'Generic List') {
                 containerComponent.models.pageable.items.forEach(item => {
                   hstBlogs.push(data.content[item["$ref"].split("/")[2]]);
                 })
-              })
+              }
+            })
           }
         });
         var blogs = [];
@@ -45,11 +49,12 @@ class Home extends Component {
             author: authorObj,
             fullyQualifiedUrl: hstBlog.fullyQualifiedUrl
           });
-        })
-        that.setState({ blogs: blogs });
+        });
+        that.setState({blogs: blogs});
       });
   }
-  constructor(props) {
+
+  constructor (props) {
     super(props);
 
     this.state = {
@@ -59,13 +64,14 @@ class Home extends Component {
 
     this.toggle = this.toggle.bind(this);
   }
-  toggle() {
+
+  toggle () {
     this.setState({
       modal: !this.state.modal
     });
   }
 
-  renderBlogs() {
+  renderBlogs () {
     if (this.state.blogs) {
       return this.state.blogs.map((blog, index) => {
         return <Col md="6" lg="4" key={index}>
@@ -78,7 +84,7 @@ class Home extends Component {
               title: blog.title,
               text: blog.introduction,
               src: blog.author.image ? "http://localhost:8080" + blog.author.image.original._links.site.href
-               : "https://secure.gravatar.com/avatar/d6231e4205a426a0d82eb7df97e52222?s=80&amp;d=mm&amp;r=g",
+                : "https://secure.gravatar.com/avatar/d6231e4205a426a0d82eb7df97e52222?s=80&amp;d=mm&amp;r=g",
               url: blog.fullyQualifiedUrl.split("http://localhost:8080/site/developer/resourceapi/blog/")[1]
             }}
           />
@@ -87,10 +93,10 @@ class Home extends Component {
     }
   }
 
-  render() {
+  render () {
     return (
       <div className="App">
-        <div className="top-background" />
+        <div className="top-background"/>
         <div className="header-container">
           <div className="header-left hidden-sm">
             <a href="https://developer.bloomreach.com/">Discover BloomReach</a>
@@ -111,7 +117,7 @@ class Home extends Component {
         </div>
         <div className="body-container">
           <div className="search-input-container">
-            <i className="fa fa-search" />
+            <i className="fa fa-search"/>
             <input
               id="search"
               type="text"
@@ -140,14 +146,13 @@ class Home extends Component {
             </li>
           </ul>
           <Container>
-            <Row>
-              {this.renderBlogs()}
-            </Row>
+            /*Layout Manager decides what should be rendered based on page model api*/
+            <LayoutManager data={this.state.data ? this.state.data : ''}/>
           </Container>
         </div>
         {this.state.modal === true && (
           <div>
-            <div className="newsletter-overlay" />
+            <div className="newsletter-overlay"/>
             <ClickOutside onClickOutside={this.toggle} className="click-inside">
               <div className="newsletter-form">
                 <button
@@ -155,7 +160,7 @@ class Home extends Component {
                   className="close-popup-cross"
                   onClick={this.toggle}
                 >
-                  <i className="icon icon-close" />
+                  <i className="icon icon-close"/>
                 </button>
                 <div className="newsletter-form-title">Subscribe</div>
                 <div className="newsletter-msg">
@@ -188,4 +193,5 @@ class Home extends Component {
     );
   }
 }
+
 export default Home;
