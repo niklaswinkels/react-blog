@@ -44,6 +44,7 @@ class Detail extends Component {
             var authorRef = blog.authors[0].$ref.split("/")[2];
             blog.author = data.content[authorRef];
             that.setState({blog: blog});
+            console.log(blog);
           }
         });
       });
@@ -72,12 +73,12 @@ class Detail extends Component {
         <div className="container">
           <div className="entry-thumbnail">
             <img
-              width="1160"
-              height="645"
-              src="https://www.bloomreach.com/binaries/original/content/gallery/blog/autosuggest.png"
+              width="650"
+              height="450"
+              src={this.state.blog && this.state.blog.externalUrl}
               className="attachment-1160x650 size-1160x650 wp-post-image"
-              alt="Building Analytics APIs at Scale"
-              srcSet="https://www.bloomreach.com/binaries/original/content/gallery/blog/autosuggest.png 3000w, https://blog.algolia.com/wp-content/uploads/2018/04/04-2018_SAnalytics-API-at-scale-01-320x178.png 320w, https://blog.algolia.com/wp-content/uploads/2018/04/04-2018_SAnalytics-API-at-scale-01-768x427.png 768w, https://blog.algolia.com/wp-content/uploads/2018/04/04-2018_SAnalytics-API-at-scale-01-720x400.png 720w, https://blog.algolia.com/wp-content/uploads/2018/04/04-2018_SAnalytics-API-at-scale-01-360x200.png 360w"
+              alt={this.state.blog && this.state.blog.title}
+              // srcSet="https://www.bloomreach.com/binaries/original/content/gallery/blog/autosuggest.png 3000w, https://blog.algolia.com/wp-content/uploads/2018/04/04-2018_SAnalytics-API-at-scale-01-320x178.png 320w, https://blog.algolia.com/wp-content/uploads/2018/04/04-2018_SAnalytics-API-at-scale-01-768x427.png 768w, https://blog.algolia.com/wp-content/uploads/2018/04/04-2018_SAnalytics-API-at-scale-01-720x400.png 720w, https://blog.algolia.com/wp-content/uploads/2018/04/04-2018_SAnalytics-API-at-scale-01-360x200.png 360w"
               sizes="(max-width: 1160px) 100vw, 1160px"
             />
             <header className="entry-header">
@@ -99,7 +100,7 @@ class Detail extends Component {
               <div className="sbutton" id="facebook-cresta-c">
                 <a
                   rel="nofollow"
-                  href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fblog.algolia.com%2Fandroid-ndk-how-to-reduce-libs-size%2F&amp;t=Android+NDK%3A+How+to+Reduce+Binaries+Size+%E2%80%93+The+Algolia+Blog"
+                  href="#"
                   title="Share to Facebook"
                 >
                   <i className="c-icon-cresta-facebook fa fa-facebook-f"/>
@@ -108,7 +109,7 @@ class Detail extends Component {
               <div className="sbutton" id="twitter-cresta-c">
                 <a
                   rel="nofollow"
-                  href="https://twitter.com/share?text=Android+NDK%3A+How+to+Reduce+Binaries+Size+%E2%80%93+The+Algolia+Blog&amp;url=https%3A%2F%2Fblog.algolia.com%2Fandroid-ndk-how-to-reduce-libs-size%2F&amp;via=algolia"
+                  href="#"
                   title="Share to Twitter"
                 >
                   <i className="c-icon-cresta-twitter fa fa-twitter"/>
@@ -117,7 +118,7 @@ class Detail extends Component {
               <div className="sbutton" id="linkedin-cresta-c">
                 <a
                   rel="nofollow"
-                  href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fblog.algolia.com%2Fandroid-ndk-how-to-reduce-libs-size%2F&amp;title=Android+NDK%3A+How+to+Reduce+Binaries+Size+%E2%80%93+The+Algolia+Blog&amp;source=https://blog.algolia.com/"
+                  href="#"
                   title="Share to Linkedin"
                 >
                   <i className="c-icon-cresta-linkedin fa fa-linkedin"/>
@@ -126,42 +127,6 @@ class Detail extends Component {
             </div>
             <div style={{clear: "both"}}/>
             <Content content={this.state.blog ? this.state.blog.body.value : ''}/>
-            <div className="bottom-share">
-              <div
-                id="crestashareiconincontent"
-                className="cresta-share-icon first_style"
-              >
-                <div className="sbutton" id="facebook-cresta-c">
-                  <a
-                    rel="nofollow"
-                    href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fblog.algolia.com%2Fandroid-ndk-how-to-reduce-libs-size%2F&amp;t=Android+NDK%3A+How+to+Reduce+Binaries+Size+%E2%80%93+The+Algolia+Blog"
-                    title="Share to Facebook"
-                  >
-                    <i className="c-icon-cresta-facebook fa fa-facebook-f"/>
-                  </a>
-                </div>
-                <div className="sbutton" id="twitter-cresta-c">
-                  <a
-                    rel="nofollow"
-                    href="https://twitter.com/share?text=Android+NDK%3A+How+to+Reduce+Binaries+Size+%E2%80%93+The+Algolia+Blog&amp;url=https%3A%2F%2Fblog.algolia.com%2Fandroid-ndk-how-to-reduce-libs-size%2F&amp;via=algolia"
-                    title="Share to Twitter"
-                  >
-                    <i className="c-icon-cresta-twitter fa fa-twitter"/>
-                  </a>
-                </div>
-                <div className="sbutton" id="linkedin-cresta-c">
-                  <a
-                    rel="nofollow"
-                    href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fblog.algolia.com%2Fandroid-ndk-how-to-reduce-libs-size%2F&amp;title=Android+NDK%3A+How+to+Reduce+Binaries+Size+%E2%80%93+The+Algolia+Blog&amp;source=https://blog.algolia.com/"
-                    title="Share to Linkedin"
-                  >
-                    <i className="c-icon-cresta-linkedin fa fa-linkedin"/>
-                  </a>
-                </div>
-                <div style={{clear: "both"}}/>
-              </div>
-              <div style={{clear: "both"}}/>
-            </div>
           </div>
           <div id="author" className="entry-meta clear">
             <Author author={(this.state.blog && this.state.blog.author) ? this.state.blog.author : ''}/>

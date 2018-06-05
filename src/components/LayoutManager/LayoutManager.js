@@ -39,7 +39,8 @@ class LayoutManager extends Component {
                   title: hstBlog.title,
                   introduction: hstBlog.introduction,
                   author: authorObj,
-                  fullyQualifiedUrl: hstBlog.fullyQualifiedUrl
+                  fullyQualifiedUrl: hstBlog.fullyQualifiedUrl,
+                  imageUrl: hstBlog.externalUrl
                 });
               });
               layoutElements.push(this.renderBlogs(blogs)); //save the rendered blog cards
@@ -73,18 +74,9 @@ class LayoutManager extends Component {
         articles!
       </div>
 
-      <form
-        action="http://go.bloomreach.com/join-the-hippo-community.html"
-        method="post"
-      >
+      <form action="http://go.bloomreach.com/join-the-hippo-community.html" method="post">
         <div className="flex-container newsletter-input">
-          <input
-            className="form-control"
-            type="email"
-            name="email"
-            placeholder="email@address.com"
-            required=""
-          />
+          <input className="form-control" type="email" name="email" placeholder="email@address.com" required=""/>
           <div className="newsletter-subscribe-btn">
             <button type="submit">Sign me up!</button>
           </div>
@@ -101,8 +93,7 @@ class LayoutManager extends Component {
             <Card
               post={{
                 name: blog.author.displayName,
-                img:
-                  "https://blog.algolia.com/wp-content/uploads/2018/04/Blogpost-KB-Open-Source.jpg",
+                img: blog.imageUrl,
                 date: blog.date,
                 title: blog.title,
                 text: blog.introduction,

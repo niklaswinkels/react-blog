@@ -26,10 +26,9 @@ textarea {
 .top-background {
   background-image: linear-gradient(
     35deg,
-    #5e2c54,
-    #352142 29%,
-    #0f1732 63%,
-    #066684
+    #e04d8b,
+    #000000 40%,
+    #0F9FD8
   );
   width: 100%;
   height: 744px;
@@ -207,7 +206,7 @@ textarea {
   border: 0;
   height: 48px;
   border-radius: 4px;
-  background-image: linear-gradient(251deg, #ff87b7, #ff4f81);
+  background-image: linear-gradient(251deg, #e04d8b, #18bdde);
   box-shadow: 0 4px 6px 0 rgba(50, 50, 93, 0.1);
   color: #fff;
   font-weight: 500;

@@ -30,8 +30,8 @@ class Card extends Component {
             }}
           >
             <img
-              width="360"
-              height="200"
+              width="200"
+              height="80"
               src={this.state.img}
               className="attachment-aerial_thumbnail size-aerial_thumbnail wp-post-image"
               alt="Supporting the Open Source Software that makes us Great"
@@ -74,7 +74,7 @@ class Card extends Component {
             </div>
             <div className="entry-author-content">
               <div className="author-name">{this.state.name}</div>
-              <div className="post-meta-info"> 6 min read in Algolia</div>
+              <div className="post-meta-info"> 6 min read on BloomReach</div>
             </div>
           </div>
         </div>

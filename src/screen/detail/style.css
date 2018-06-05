@@ -24,17 +24,18 @@ img {
   overflow: hidden;
   background: #f7f7ff;
   position: relative;
+  text-align: center;
 }
 .entry-thumbnail img {
   object-fit: cover;
-  width: 100%;
+  /*width: 100%;*/
   height: 100%;
 }
 .entry-header {
   bottom: 0;
   width: 100%;
-  height: 65%;
-  background-image: linear-gradient(to top, #6d5e9a, rgba(195, 175, 254, 0));
+  height: 100%;
+  background-image: linear-gradient(to top, rgb(224,77,139,0.7),rgb(24,189,222,0.2) 60%);
   position: absolute;
   border-radius: 4px;
   overflow: hidden;
@@ -91,7 +92,7 @@ img {
   margin: 0 auto 40px;
   position: relative;
   padding-bottom: 40px;
-  border-bottom: 1px solid #8994c6;
+  border-bottom: 1px solid #e04d8b;
 }
 .entry-content a {
   color: #00aeff !important;
@@ -138,12 +139,12 @@ img {
 .cresta-share-icon i.c-icon-cresta-linkedin,
 .cresta-share-icon i.c-icon-cresta-pinterest,
 .cresta-share-icon i.c-icon-cresta-print {
-  color: #8994c6;
+  color: #18bdde;
   width: 40px !important;
   height: 40px !important;
   text-align: center !important;
   padding: 9px 0;
-  border: 1px solid #8994c6;
+  border: 1px solid #e04d8b;
   position: relative;
   overflow: hidden;
   -webkit-box-sizing: border-box !important;
@@ -164,7 +165,7 @@ img {
   position: relative;
 }
 #author .entry-social-links a {
-  color: #8994c6 !important;
+  color: #18bdde !important;
   font-size: 20px;
   display: inline-block;
   margin-right: 10px;

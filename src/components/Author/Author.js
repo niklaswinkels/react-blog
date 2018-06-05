@@ -19,7 +19,6 @@ class Author extends Component {
             height="80"
             width="80"
             originals="80"
-            src-orig="https://secure.gravatar.com/avatar/25760a5d4e793e491f26da5db64bb738?s=80&amp;d=mm&amp;r=g"
             scale="2"
           />
         </div>
@@ -28,19 +27,19 @@ class Author extends Component {
           <div className="author-position">{this.props.author && this.props.author.role}</div>
           <div className="entry-social-links">
             <a
-              href="https://twitter.com/jlemoine_algo"
+              href="#"
               className="social-link social-link-aerial_twitter"
             >
               <i className="fa fa-twitter" />
             </a>
             <a
-              href="https://www.linkedin.com/in/julienlemoine/"
+              href="#"
               className="social-link social-link-aerial_linkedin"
             >
               <i className="fa fa-linkedin" />
             </a>
             <a
-              href="https://github.com/speedblue"
+              href="#"
               className="social-link social-link-aerial_github"
             >
               <i className="fa fa-github" />
