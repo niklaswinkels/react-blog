@@ -50,7 +50,12 @@ class LayoutManager extends Component {
             if (containerComponent.componentClass === 'com.bloomreach.components.catalog.MarketoFormComponent'
               && containerComponent.label === 'Marketo Form'
               && containerComponent.name === 'marketoform') {
-              layoutElements.push(this.renderForm());
+              var form = {
+                title: containerComponent.models.document.marketoform.formTitle,
+                subtitle: containerComponent.models.document.marketoform.formSubtitle
+
+              };
+              layoutElements.push(this.renderForm(form));
             }
           });
         }
@@ -59,7 +64,7 @@ class LayoutManager extends Component {
     that.setState({layoutElements: layoutElements});
   }
 
-  renderForm () {
+  renderForm (form) {
     return <div className="newsletter-form">
       <button
         type="button"
@@ -68,12 +73,8 @@ class LayoutManager extends Component {
       >
         <i className="icon icon-close"/>
       </button>
-      <div className="newsletter-form-title">Subscribe</div>
-      <div className="newsletter-msg">
-        Stay up to date and join the mailing list to get the newest
-        articles!
-      </div>
-
+      <div className="newsletter-form-title">{form.title}</div>
+      <div className="newsletter-msg">{form.subtitle}</div>
       <form action="http://go.bloomreach.com/join-the-hippo-community.html" method="post">
         <div className="flex-container newsletter-input">
           <input className="form-control" type="email" name="email" placeholder="email@address.com" required=""/>
