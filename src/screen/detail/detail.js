@@ -8,6 +8,8 @@ import Content from "../../components/Content/Content";
 import Newsletter from "../../components/Newsletter/Newsletter";
 import "../../App.css";
 import "./style.css";
+import logo from "../../images/bloomreach_logo_diap.png"
+
 class Detail extends Component {
   constructor(props) {
     super(props);
@@ -39,7 +41,7 @@ class Detail extends Component {
           <p className="site-branding">
             <a href="https://www.bloomreach.com/">
               <img
-                src="https://www.bloomreach.com/webfiles/1526984875645/com-assets/img/logo.svg"
+                src={logo}
                 alt="BloomReach Developer Blog"
               />
             </a>

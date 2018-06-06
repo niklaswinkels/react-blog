@@ -1,9 +1,18 @@
+@font-face {
+  font-family: 'EuropaRegular';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/europa/EuropaRegular.otf');
+  src: local('EuropaRegular'),
+       url('/fonts/europa/EuropaRegular.otf'),
+}
+
 .App {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Roboto Mono", sans-serif;
 }
 p {
   margin: 0 0 10px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: EuropaRegular, sans-serif;
 }
 a,
 u {
@@ -24,20 +33,13 @@ textarea {
   font-weight: 200;
 }
 .top-background {
-  background-image: linear-gradient(
-    35deg,
-    #5e2c54,
-    #352142 29%,
-    #0f1732 63%,
-    #066684
-  );
+  background-color: #101832;
   width: 100%;
   height: 744px;
   position: absolute;
   z-index: -1;
   top: 0;
-  clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+
 }
 
 @media (max-width: 768px) {
@@ -78,6 +80,12 @@ textarea {
   border-radius: 4px;
   border-color: #fff;
   border-width: 1px;
+}
+.header-right .btn-static-default:hover {
+  border-radius: 4px;
+  border-color: #fff;
+  border-width: 1px;
+  background-color: rgba(137,148,198,0.3);
 }
 .header-container {
   margin-right: auto;
@@ -224,8 +232,10 @@ textarea {
   }
   .site-branding {
     margin-top: 11px;
+    display: block;
   }
   .site-branding img {
+    max-width: auto;
     height: 30px;
   }
   .header-container {
@@ -247,7 +257,7 @@ textarea {
   }
 }
 .icon-close:before {
-  font-family: Arial, Helvetica, sans-serif !important;
+  font-family: EuropaRegular, sans-serif !important;
   content: "X";
 }
 

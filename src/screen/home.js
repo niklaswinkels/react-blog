@@ -3,6 +3,7 @@ import ClickOutside from "react-click-outside";
 import { Col, Row, Container } from "reactstrap";
 import Card from "../components/Card/Card";
 import LastCard from "../components/LastCard/LastCard";
+import logo from "../images/bloomreach_logo_diap.png"
 
 import "../App.css";
 class Home extends Component {
@@ -30,14 +31,14 @@ class Home extends Component {
           <div className="header-left hidden-sm">
             <a href="https://developer.bloomreach.com/">Discover BloomReach</a>
           </div>
-          <p className="site-branding">
+          <div className="site-branding">
             <a href="https://www.bloomreach.com/">
               <img
-                src="https://www.bloomreach.com/webfiles/1526984875645/com-assets/img/logo.svg"
+                src={logo}
                 alt="BloomReach Developer Blog"
               />
             </a>
-          </p>
+          </div>
           <div className="header-right" onClick={this.toggle}>
             <a className="btn btn-static-default" href="#">
               Get the newsletter
