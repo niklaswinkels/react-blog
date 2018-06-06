@@ -6,7 +6,7 @@ class Newsletter extends Component {
       <div className="newsletter-form">
         <div className="newsletter-form-title">Subscribe to our newsletter</div>
         <form
-          action="https://go.pardot.com/l/139121/2016-06-09/f3kzm"
+          action="#"
           className="km-subscribe-nl-form"
           method="post"
         >

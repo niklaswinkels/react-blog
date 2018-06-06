@@ -80,16 +80,16 @@ class Home extends Component {
               <Col md="6" lg="4">
                 <Card
                   post={{
-                    name: "Martyn Davies",
+                    name: "Arje Cahn",
                     img:
-                      "https://blog.algolia.com/wp-content/uploads/2018/04/Blogpost-KB-Open-Source.jpg",
+                      "https://www.bloomreach.com/binaries/original/content/gallery/blog/autosuggest.png",
                     date: "May 8th 2018",
                     title:
                       "Supporting the Open Source Software that makes us Great",
                     text:
                       "At Algolia,many of us are working with,contributing to,or benefitting from open[..]",
                     src:
-                      "https://secure.gravatar.com/avatar/d6231e4205a426a0d82eb7df97e52222?s=80&amp;d=mm&amp;r=g",
+                      "https://www.bloomreach.com/binaries/blogimage/content/gallery/bloomreach.com_2/leadership/arje.jpg",
                     url: "supporting-open-source-projects"
                   }}
                 />
@@ -97,15 +97,15 @@ class Home extends Component {
               <Col md="6" lg="4">
                 <Card
                   post={{
-                    name: "Alexandra Prokhorova",
+                    name: "Arje Cahn",
                     img:
-                      "https://blog.algolia.com/wp-content/uploads/2018/04/04-2018_Hacking-User-Research.png",
+                      "https://www.bloomreach.com/binaries/original/content/gallery/blog/bloomreach_api-illustration_final-01.png",
                     date: "April 18th 2018",
                     title: "How to Hack User Research",
                     text:
                       "In this article, we’re sharing how we’re getting creative with conducting user research to […]",
                     src:
-                      "https://secure.gravatar.com/avatar/b7b1f6907cbd482084cdddb82f2c0762?s=80&d=mm&r=g",
+                      "https://www.bloomreach.com/binaries/blogimage/content/gallery/bloomreach.com_2/leadership/arje.jpg",
                     url: "how-to-hack-user-research"
                   }}
                 />
@@ -113,15 +113,15 @@ class Home extends Component {
               <Col md="6" lg="4">
                 <Card
                   post={{
-                    name: "Sylvain Friquet",
+                    name: "Arje Cahn",
                     img:
-                      "https://blog.algolia.com/wp-content/uploads/2018/04/04-2018_SAnalytics-API-at-scale-01.png",
+                      "https://www.bloomreach.com/binaries/original/content/gallery/blog/sysper.png",
                     date: "Apr 6th 2018",
                     title: "Building Real Time Analytics APIs at Scale",
                     text:
                       "We recently redesigned our analytics API from the ground up, in order to provide […]",
                     src:
-                      "https://secure.gravatar.com/avatar/fedb84f11c7a57ad54880b0da6bbca0d?s=80&d=mm&r=g",
+                      "https://www.bloomreach.com/binaries/blogimage/content/gallery/bloomreach.com_2/leadership/arje.jpg",
                     url: "building-real-time-analytics-apis"
                   }}
                 />

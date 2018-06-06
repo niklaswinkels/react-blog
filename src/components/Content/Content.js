@@ -5,10 +5,10 @@ class Content extends Component {
     return (
       <div>
         <p>
-          When we started Algolia Development for Android, binary size
+          When we started BloomReach Development for Android, binary size
           optimization was not one of our main&nbsp;concerns.&nbsp;In fact we
           even started to develop in JAVA before switching to C/C++ for{" "}
-          <a href="http://blog.algolia.com/need-performance-on-mobile-use-c-cpp/">
+          <a href="https://developers.bloomreach.com/">
             reasons of performance
           </a>.
         </p>
@@ -20,12 +20,12 @@ class Content extends Component {
             Cyril Mottier
           </a>&nbsp;who informed us that it would be difficult to integrate our
           lib in
-          <a href="https://play.google.com/store/apps/details?id=com.cyrilmottier.android.avelov">
+          <a href="https://developers.bloomreach.com/">
             AVelov
           </a>
-          Android Application because its size. AVelov is 638KB and Algolia was
+          Android Application because its size. AVelov is 638KB and BloomReach was
           850KB, which would mean that AVelov would more than double in size
-          with Algolia Search embedded.
+          with BloomReach Search embedded.
         </p>
       </div>
     );

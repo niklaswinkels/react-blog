@@ -14,7 +14,7 @@ class LastCard extends Component {
               publications!
             </div>
             <form
-              action="https://go.pardot.com/l/139121/2016-06-09/f3kzm"
+              action="#"
               className="km-subscribe-nl-form"
               method="post"
             >
