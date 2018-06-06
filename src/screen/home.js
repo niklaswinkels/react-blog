@@ -87,7 +87,7 @@ class Home extends Component {
                     title:
                       "Supporting the Open Source Software that makes us Great",
                     text:
-                      "At Algolia,many of us are working with,contributing to,or benefitting from open[..]",
+                      "At BloomReach,many of us are working with,contributing to,or benefitting from open[..]",
                     src:
                       "https://www.bloomreach.com/binaries/blogimage/content/gallery/bloomreach.com_2/leadership/arje.jpg",
                     url: "supporting-open-source-projects"
