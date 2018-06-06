@@ -1,8 +1,5 @@
 import React, {Component} from "react";
 import ClickOutside from "react-click-outside";
-import {Col, Row, Container} from "reactstrap";
-import Card from "../../components/Card/Card";
-import LastCard from "../../components/LastCard/LastCard";
 import Author from "../../components/Author/Author";
 import Content from "../../components/Content/Content";
 import Newsletter from "../../components/Newsletter/Newsletter";
@@ -44,7 +41,6 @@ class Detail extends Component {
             var authorRef = blog.authors[0].$ref.split("/")[2];
             blog.author = data.content[authorRef];
             that.setState({blog: blog});
-            console.log(blog);
           }
         });
       });
@@ -56,7 +52,7 @@ class Detail extends Component {
         <div className="top-background"/>
         <div className="header-container">
           <div className="header-left hidden-sm">
-            <a href="https://www.algolia.com/">Discover BloomReach</a>
+            <a href="https://developer.bloomreach.com/">Discover BloomReach</a>
           </div>
           <p className="site-branding">
             <a href="https://www.bloomreach.com/">
@@ -78,7 +74,6 @@ class Detail extends Component {
               src={this.state.blog && this.state.blog.externalUrl}
               className="attachment-1160x650 size-1160x650 wp-post-image"
               alt={this.state.blog && this.state.blog.title}
-              // srcSet="https://www.bloomreach.com/binaries/original/content/gallery/blog/autosuggest.png 3000w, https://blog.algolia.com/wp-content/uploads/2018/04/04-2018_SAnalytics-API-at-scale-01-320x178.png 320w, https://blog.algolia.com/wp-content/uploads/2018/04/04-2018_SAnalytics-API-at-scale-01-768x427.png 768w, https://blog.algolia.com/wp-content/uploads/2018/04/04-2018_SAnalytics-API-at-scale-01-720x400.png 720w, https://blog.algolia.com/wp-content/uploads/2018/04/04-2018_SAnalytics-API-at-scale-01-360x200.png 360w"
               sizes="(max-width: 1160px) 100vw, 1160px"
             />
             <header className="entry-header">
@@ -100,7 +95,7 @@ class Detail extends Component {
               <div className="sbutton" id="facebook-cresta-c">
                 <a
                   rel="nofollow"
-                  href="#"
+                  href=""
                   title="Share to Facebook"
                 >
                   <i className="c-icon-cresta-facebook fa fa-facebook-f"/>
@@ -109,7 +104,7 @@ class Detail extends Component {
               <div className="sbutton" id="twitter-cresta-c">
                 <a
                   rel="nofollow"
-                  href="#"
+                  href=""
                   title="Share to Twitter"
                 >
                   <i className="c-icon-cresta-twitter fa fa-twitter"/>
@@ -118,7 +113,7 @@ class Detail extends Component {
               <div className="sbutton" id="linkedin-cresta-c">
                 <a
                   rel="nofollow"
-                  href="#"
+                  href=""
                   title="Share to Linkedin"
                 >
                   <i className="c-icon-cresta-linkedin fa fa-linkedin"/>

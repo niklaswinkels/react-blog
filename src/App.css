@@ -128,7 +128,7 @@ textarea {
 .newsletter-form {
   max-width: 760px;
   padding: 90px 80px 90px;
-  background: url(//blog.algolia.com/wp-content/themes/aerial/css/../images/newsletter.svg);
+  background: url(https://www.bloomreach.com/binaries/ninecolumn/content/gallery/bloomreach.com_2/illustrations/30_about-us.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -254,7 +254,6 @@ textarea {
   vertical-align: middle;
 }
 [class*=" icon-"] {
-  font-family: "algolia-website-iconfont" !important;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;

@@ -3,9 +3,9 @@ import "./style.css";
 
 class Author extends Component {
 
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   render() {
     return (
@@ -27,19 +27,19 @@ class Author extends Component {
           <div className="author-position">{this.props.author && this.props.author.role}</div>
           <div className="entry-social-links">
             <a
-              href="#"
+              href=""
               className="social-link social-link-aerial_twitter"
             >
               <i className="fa fa-twitter" />
             </a>
             <a
-              href="#"
+              href=""
               className="social-link social-link-aerial_linkedin"
             >
               <i className="fa fa-linkedin" />
             </a>
             <a
-              href="#"
+              href=""
               className="social-link social-link-aerial_github"
             >
               <i className="fa fa-github" />

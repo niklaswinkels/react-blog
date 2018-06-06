@@ -3,9 +3,9 @@ import {Col, Row, Container} from "reactstrap";
 import Card from "../Card/Card";
 
 class LayoutManager extends Component {
-  constructor (props) {
-    super(props);
-  }
+  // constructor (props) {
+  //   super(props);
+  // }
 
   componentWillReceiveProps () {
     var layoutElements = []; //array that contains the child react components

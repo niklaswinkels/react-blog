@@ -1,8 +1,6 @@
 import React, {Component} from "react";
 import ClickOutside from "react-click-outside";
-import {Col, Row, Container} from "reactstrap";
-import Card from "../components/Card/Card";
-import LastCard from "../components/LastCard/LastCard";
+import {Container} from "reactstrap";
 import LayoutManager from "../components/LayoutManager/LayoutManager";
 
 import "../App.css";
@@ -76,22 +74,22 @@ class Home extends Component {
           </div>
           <ul className="categories-list hidden-xs">
             <li className="">
-              <a href="#">Product</a>
+              <a href="">Product</a>
             </li>
             <li className="">
-              <a href="#">Engineering</a>
+              <a href="">Engineering</a>
             </li>
             <li className="">
-              <a href="#">BloomReach</a>
+              <a href="">BloomReach</a>
             </li>
             <li className="">
-              <a href="#">Experience</a>
+              <a href="">Experience</a>
             </li>
             <li className="">
-              <a href="#">Personalization</a>
+              <a href="">Personalization</a>
             </li>
             <li className="">
-              <a href="#">UX</a>
+              <a href="">UX</a>
             </li>
           </ul>
           <Container>
