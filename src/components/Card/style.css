@@ -97,11 +97,11 @@ img {
 .entry-author-content {
   overflow: hidden;
 }
-.entry-author-content .author-name {
-  font-weight: 500 !important;
-  font-size: 13px !important;
-  white-space: nowrap !important;
-  line-height: 25px !important;
+.entry-author-content .author-name-card {
+  font-weight: 500;
+  font-size: 13px;
+  white-space: nowrap;
+  line-height: 25px;
 }
 .entry-author-content .post-meta-info {
   line-height: 1.85;

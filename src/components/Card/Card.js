@@ -74,7 +74,7 @@ class Card extends Component {
               />
             </div>
             <div className="entry-author-content">
-              <div className="author-name">{this.state.name}</div>
+              <div className="author-name-card">{this.state.name}</div>
               <div className="post-meta-info"> 6 min read in BloomReach</div>
             </div>
           </div>

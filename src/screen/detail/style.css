@@ -93,6 +93,9 @@ img {
   position: relative;
   padding-bottom: 40px;
   border-bottom: 1px solid #8994c6;
+  font-size: 21px;
+  line-height: 1.6;
+  letter-spacing: -.003em;
 }
 .entry-content a {
   color: #00aeff !important;
