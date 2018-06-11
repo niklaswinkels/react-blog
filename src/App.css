@@ -39,7 +39,21 @@ textarea {
   position: absolute;
   z-index: -1;
   top: 0;
+}
 
+.top-background:after {
+    content: '';
+    background-image: url(images/wave-bg.svg);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: bottom;
+    display: block;
+    position: absolute;
+    bottom: -1px;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    overflow: hidden;
 }
 
 @media (max-width: 768px) {
