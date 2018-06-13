@@ -48,6 +48,7 @@ img {
   object-fit: cover;
 }
 .post-content {
+  color: black;
   padding: 40px;
 }
 .post-date {
