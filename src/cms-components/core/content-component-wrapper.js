@@ -40,15 +40,16 @@ export default class ContentComponentWrapper extends React.Component {
       content = jsonpointer.get(pageModel, documentUuid);
     }
 
-    if (!content && preview) {
-      // return placeholder if no document is set on component
-      return (
-        <PlaceholderComponent name={configuration.label} />
-      );
-    } else if (!content) {
-      // don't render placeholder outside of preview mode
-      return null;
-    }
+    // if (!content && preview) {
+    //   // return placeholder if no document is set on component
+    //   return (
+    //     <PlaceholderComponent name={configuration.label} />
+    //   );
+    // }
+    // else if (!content) {
+    //   // don't render placeholder outside of preview mode
+    //   return null;
+    // }
 
     // create edit content button and pass as a prop
     const manageContentButton = React.createElement(ManageContentButton, { content: content, preview: preview }, null);
