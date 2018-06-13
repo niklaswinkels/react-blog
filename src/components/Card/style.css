@@ -39,7 +39,7 @@ img {
 }
 .post-img {
   background: #fff;
-  min-height: 196px;
+  max-height: 25%;
   text-align: center;
 }
 .post-img img {

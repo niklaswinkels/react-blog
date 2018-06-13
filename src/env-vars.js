@@ -7,7 +7,7 @@ const defaultCmsPreviewPrefix = '_cmsinternal';
 const defaultCmsApiPath = 'resourceapi';
 const defaultCmsApiComponentRenderingUrlSuffix = '?_hn:type=component-rendering&_hn:ref=';
 
-const SPAENV = (typeof window !== 'undefined' && typeof window.SPAENV !== 'undefined') ? window.SPAENV : {};
+const SPAENV = (typeof window !== 'undefined' && typeof window.SPAENV !== 'undefined') ? window.SPAENV : {cmsChannelPath:"developer"};
 
 let scheme = (SPAENV.scheme) ? SPAENV.scheme : defaultScheme;
 let cmsHostName = (SPAENV.cmsHostName) ? SPAENV.cmsHostName : defaultCmsHostName;

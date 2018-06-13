@@ -20,7 +20,7 @@ export default class CmsContainerItem extends React.Component {
           { configuration: component, pageModel: pageModel, preview: preview }, null);
         return (componentEl);
       }
-    } else {
+    } else if(preview){
       // component not defined in component-definitions
       return (
         <UndefinedComponent name={component.label} />
