@@ -1,5 +1,4 @@
 import React from 'react';
-import PlaceholderComponent from './placeholder';
 import UndefinedComponent from "./undefined";
 import ManageContentButton from "./manage-content-button";
 import { componentDefinitions } from "../../component-definitions";

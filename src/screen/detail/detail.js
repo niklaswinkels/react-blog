@@ -1,12 +1,10 @@
-import React, {Component} from "react";
+import React from "react";
 import ClickOutside from "react-click-outside";
 import Author from "../../components/Author/Author";
 import Content from "../../components/Content/Content";
 import Newsletter from "../../components/Newsletter/Newsletter";
-import "../../App.css";
-import "./style.css";
 
-class Detail extends Component {
+export default class Detail extends React.Component {
   constructor (props) {
     super(props);
 
@@ -24,48 +22,18 @@ class Detail extends Component {
   }
 
   componentDidMount () {
-    var resourceDetailBaseUrl = "http://localhost:8080/site/developer/resourceapi/blog";
     var that = this;
-    fetch(resourceDetailBaseUrl + this.props.location.pathname)
-      .then(function (response) {
-        if (response.status >= 400) {
-          throw new Error("Bad response from server");
-        }
-        return response.json();
-      })
-      .then(function (data) {
-        data.page.components.forEach(component => {
-          if (component.componentClass === 'org.onehippo.cms7.essentials.components.EssentialsContentComponent') {
-            var blog = data.content[component.models.document.$ref.split("/")[2]];
-            //find author of blog
-            var authorRef = blog.authors[0].$ref.split("/")[2];
-            blog.author = data.content[authorRef];
-            that.setState({blog: blog});
-          }
-        });
-      });
+    var blog = this.props.pageModel.content[this.props.configuration.models.document.$ref.split("/")[2]];
+    //find author of blog
+    var authorRef = blog.authors[0].$ref.split("/")[2];
+    blog.author = this.props.pageModel.content[authorRef];
+    that.setState({blog: blog});
+
   }
 
   render () {
     return (
-      <div className="App">
-        <div className="top-background"/>
-        <div className="header-container">
-          <div className="header-left hidden-sm">
-            <a href="https://developer.bloomreach.com/">Discover BloomReach</a>
-          </div>
-          <p className="site-branding">
-            <a href="https://www.bloomreach.com/">
-              <img
-                src="https://www.bloomreach.com/webfiles/1526984875645/com-assets/img/logo.svg"
-                alt="BloomReach Developer Blog"
-              />
-            </a>
-          </p>
-          <div className="header-right" onClick={this.toggle}>
-            <a className="btn btn-static-default">Get the newsletter</a>
-          </div>
-        </div>
+      <div className="Detail">
         <div className="container">
           <div className="entry-thumbnail">
             <img
@@ -171,5 +139,3 @@ class Detail extends Component {
     );
   }
 }
-
-export default Detail;

@@ -4,7 +4,8 @@ import { findChildById } from '../../utils/find-child-by-id';
 import { addBodyComments } from '../../utils/add-html-comment';
 import Header from '../../header';
 import CmsComponent from './component';
-import CmsContainer from './container'; // eslint-disable-line
+import TagManagerBody from "../essentials/tagmanagerbody";
+import CodeBottom from "../essentials/codebottom";
 
 export default class CmsPage extends React.Component {
   constructor(props) {
@@ -100,6 +101,7 @@ export default class CmsPage extends React.Component {
 
     return (
       <React.Fragment>
+        <TagManagerBody configuration={pageModel.page.components.find(e => e.name === "tagmanagerbody")}/>
         <Header pageModel={pageModel} preview={preview} />
         <div className="container marketing">
           <CmsComponent configuration={pageModel.page} pageModel={pageModel} preview={preview} />
@@ -107,6 +109,7 @@ export default class CmsPage extends React.Component {
           {/*rendering a specific container:*/}
           {/*<CmsContainer path='main/container' pageModel={pageModel} preview={preview} />*/}
         </div>
+        <CodeBottom configuration={pageModel.page.components.find(e => e.name === "codeBottom")}/>
       </React.Fragment>
     );
   }

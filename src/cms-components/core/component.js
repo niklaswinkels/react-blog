@@ -1,6 +1,8 @@
 import React from 'react';
 import CmsContainer from './container';
 import { getConfigurationForPath } from '../../utils/get-configuration-for-path';
+import CmsContainerItem from "./container-item";
+import Detail from "../../screen/detail/detail";
 
 export default class CmsComponent extends React.Component {
   renderComponentWrapper(configuration, pageModel, preview) {
@@ -18,6 +20,11 @@ export default class CmsComponent extends React.Component {
 
   renderComponent(configuration = { components: [] }, pageModel, preview) {
     // render all of the nested components
+    if(configuration.componentClass === "org.onehippo.cms7.essentials.components.EssentialsContentComponent"){
+      return(
+        <Detail configuration={configuration  } pageModel={pageModel} />
+      );
+    }
     if (configuration.components && configuration.components.length > 0) {
       return configuration.components.map((component) => {
         if (component.type === 'CONTAINER_COMPONENT') {
@@ -28,7 +35,7 @@ export default class CmsComponent extends React.Component {
         } else {
           // render regular component
           return (
-            <CmsComponent configuration={component} pageModel={pageModel} preview={preview} key={component.id}/>
+            <CmsContainerItem configuration={component} pageModel={pageModel} preview={preview} key={component.id}/>
           );
         }
       });

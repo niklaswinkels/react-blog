@@ -6,7 +6,7 @@ export default class SEO extends React.Component {
     const configuration = this.props.configuration;
 
     var params = configuration._meta.params;
-    console.log(params);
+    // console.log(params);
     return (
       <Helmet>
         <title>{params["site-title"]}</title>
